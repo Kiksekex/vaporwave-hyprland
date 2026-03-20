@@ -39,7 +39,7 @@ A complete Hyprland desktop configuration in the **vaporwave / synthwave** aesth
 ## 🚀 Installation
 
 ```bash
-git clone <repo-url> vaporwave-hyprland
+git clone https://github.com/Kiksekex/vaporwave-hyprland.git
 cd vaporwave-hyprland
 bash install.sh
 ```
