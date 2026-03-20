@@ -1,0 +1,115 @@
+[global]
+    ### Display ###
+    monitor          = 0
+    follow           = mouse
+    width            = (240, 400)
+    height           = (80, 200)
+    origin           = top-right
+    offset           = (14, 56)
+    scale            = 0
+    notification_limit = 5
+
+    ### Progress bar ###
+    progress_bar                = true
+    progress_bar_height         = 6
+    progress_bar_frame_width    = 1
+    progress_bar_min_width      = 160
+    progress_bar_max_width      = 360
+    progress_bar_corner_radius  = 4
+    icon_corner_radius          = 6
+
+    ### Appearance ###
+    transparency      = 12
+    separator_height  = 2
+    padding           = 14
+    horizontal_padding = 16
+    text_icon_padding  = 12
+    frame_width        = 2
+    frame_color        = "#ff2a6d"
+    gap_size           = 6
+    separator_color    = frame
+    sort               = yes
+    idle_threshold     = 120
+
+    ### Text ###
+    font            = JetBrainsMono Nerd Font 11
+    line_height     = 0
+    markup          = full
+    format          = "<b>%s</b>\n%b"
+    alignment       = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    ellipsize       = middle
+    ignore_newline  = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators  = yes
+
+    ### Icons ###
+    icon_theme       = Papirus-Dark
+    enable_recursive_icon_lookup = true
+    icon_position    = left
+    min_icon_size    = 32
+    max_icon_size    = 48
+
+    ### History ###
+    sticky_history   = yes
+    history_length   = 20
+
+    ### Misc ###
+    dmenu            = /usr/bin/rofi -dmenu -p dunst
+    browser          = /usr/bin/xdg-open
+    always_run_script = true
+    title            = Dunst
+    class            = Dunst
+    corner_radius    = 12
+    ignore_dbusclose = false
+    force_xwayland   = false
+    force_xinerama   = false
+
+    ### Mouse ###
+    mouse_left_click   = close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click  = close_all
+
+[experimental]
+    per_monitor_dpi = false
+
+# ── Urgency levels ─────────────────────────────────────────────────────────
+
+[urgency_low]
+    background   = "#0d022188"
+    foreground   = "#c0b0ff"
+    frame_color  = "#7b2fff"
+    highlight    = "#7b2fff"
+    timeout      = 4
+    icon         = dialog-information
+
+[urgency_normal]
+    background   = "#0d022199"
+    foreground   = "#e0d0ff"
+    frame_color  = "#ff2a6d"
+    highlight    = "#05d9e8"
+    timeout      = 7
+    icon         = dialog-information
+
+[urgency_critical]
+    background   = "#200010dd"
+    foreground   = "#ff71ce"
+    frame_color  = "#ff2a6d"
+    highlight    = "#ff2a6d"
+    timeout      = 0
+    icon         = dialog-warning
+
+# ── App-specific rules ─────────────────────────────────────────────────────
+
+[spotify]
+    appname     = Spotify
+    frame_color = "#05d9e8"
+    highlight   = "#05d9e8"
+    timeout     = 5
+
+[discord]
+    appname     = Discord
+    frame_color = "#7b2fff"
+    timeout     = 4

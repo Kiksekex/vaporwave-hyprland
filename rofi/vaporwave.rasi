@@ -1,0 +1,185 @@
+/* ═══════════════════════════════════════════════
+   VAPORWAVE ROFI THEME
+   ═══════════════════════════════════════════════ */
+
+* {
+    /* Palette */
+    bg0:          rgba(13,  2, 33,  0.92);
+    bg1:          rgba(25,  0, 55,  0.88);
+    bg2:          rgba(40,  0, 80,  0.80);
+    bg-hover:     rgba(123, 47, 255, 0.18);
+    bg-select:    rgba(5,  217, 232, 0.14);
+
+    pink:         rgba(255, 42,  109, 1.00);
+    pink-soft:    rgba(255, 113, 206, 1.00);
+    cyan:         rgba(5,   217, 232, 1.00);
+    purple:       rgba(123,  47, 255, 1.00);
+    gold:         rgba(255, 230, 109, 1.00);
+    text:         rgba(224, 208, 255, 0.92);
+    text-dim:     rgba(180, 150, 255, 0.55);
+    border-pink:  rgba(255, 42,  109, 0.45);
+    border-cyan:  rgba(5,   217, 232, 0.35);
+
+    /* Apply */
+    background-color: transparent;
+    text-color:       @text;
+    font:             "JetBrainsMono Nerd Font 13";
+}
+
+/* ── Window ─────────────────────────────────────── */
+window {
+    background-color: @bg0;
+    border:           2px solid @pink;
+    border-radius:    14px;
+    padding:          0;
+    width:            640px;
+    box-shadow:       0 8px 40px rgba(255, 42, 109, 0.30),
+                      0 0  0 1px rgba(5, 217, 232, 0.12) inset;
+}
+
+/* ── Main box ───────────────────────────────────── */
+mainbox {
+    background-color: transparent;
+    spacing:          0;
+    children:         [ inputbar, message, listview ];
+    padding:          12px;
+}
+
+/* ── Input bar ──────────────────────────────────── */
+inputbar {
+    background-color: @bg1;
+    border:           1px solid @border-pink;
+    border-radius:    10px;
+    padding:          10px 14px;
+    margin:           0 0 10px 0;
+    children:         [ prompt, textbox-prompt-colon, entry ];
+    spacing:          6px;
+}
+
+prompt {
+    background-color: transparent;
+    text-color:       @cyan;
+    font:             "JetBrainsMono Nerd Font Bold 13";
+}
+
+textbox-prompt-colon {
+    background-color: transparent;
+    text-color:       @pink-soft;
+    expand:           false;
+    str:              "  ";
+}
+
+entry {
+    background-color: transparent;
+    text-color:       @text;
+    placeholder:      "Search…";
+    placeholder-color: @text-dim;
+    cursor:           text;
+}
+
+/* ── List view ──────────────────────────────────── */
+listview {
+    background-color: transparent;
+    lines:            9;
+    columns:          1;
+    spacing:          3px;
+    cycle:            true;
+    dynamic:          true;
+    scrollbar:        false;
+}
+
+/* ── Elements ───────────────────────────────────── */
+element {
+    background-color: transparent;
+    border-radius:    8px;
+    padding:          8px 12px;
+    spacing:          10px;
+    orientation:      horizontal;
+    children:         [ element-icon, element-text ];
+    cursor:           pointer;
+    transition:       background-color 0.12s ease;
+}
+
+element-icon {
+    background-color: transparent;
+    size:             22px;
+    cursor:           inherit;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       @text;
+    highlight:        bold @cyan;
+    cursor:           inherit;
+    vertical-align:   0.5;
+}
+
+/* Normal */
+element.normal.normal {
+    background-color: transparent;
+    text-color:       @text;
+}
+
+/* Hover */
+element.normal.normal:hover,
+element.alternate.normal:hover {
+    background-color: @bg-hover;
+    text-color:       @pink-soft;
+    border:           1px solid rgba(255, 113, 206, 0.35);
+}
+
+/* Active (selected) */
+element.selected.normal {
+    background-color: @bg-select;
+    text-color:       @cyan;
+    border:           1px solid @border-cyan;
+    box-shadow:       0 0 12px rgba(5, 217, 232, 0.25);
+}
+
+element.selected.active {
+    background-color: rgba(255, 42, 109, 0.18);
+    text-color:       @pink;
+    border:           1px solid @border-pink;
+}
+
+/* Urgent */
+element.normal.urgent,
+element.alternate.urgent {
+    background-color: rgba(255, 42, 109, 0.12);
+    text-color:       @pink;
+}
+
+element.selected.urgent {
+    background-color: rgba(255, 42, 109, 0.25);
+    text-color:       @pink;
+}
+
+/* ── Alternate rows ─────────────────────────────── */
+element.alternate.normal {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* ── Message / Error ────────────────────────────── */
+message {
+    background-color: rgba(255, 42, 109, 0.10);
+    border:           1px solid @border-pink;
+    border-radius:    8px;
+    padding:          6px 12px;
+    margin:           0 0 8px 0;
+}
+
+textbox {
+    background-color: transparent;
+    text-color:       @pink-soft;
+    font:             "JetBrainsMono Nerd Font Italic 12";
+}
+
+/* ── Scrollbar ──────────────────────────────────── */
+scrollbar {
+    background-color: @bg2;
+    handle-color:     @purple;
+    handle-width:     5px;
+    border-radius:    4px;
+    width:            6px;
+    padding:          2px;
+}
