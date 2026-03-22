@@ -29,12 +29,15 @@
 /* ── Window ─────────────────────────────────────── */
 window {
     background-color: @bg0;
-    border:           2px solid @pink;
+    border:           2px solid;
+    border-color:     @pink;
     border-radius:    14px;
     padding:          0;
     width:            640px;
-    box-shadow:       0 8px 40px rgba(255, 42, 109, 0.30),
-                      0 0  0 1px rgba(5, 217, 232, 0.12) inset;
+    box-shadow:       0 8px 40px;
+    box-shadow-color: rgba(255, 42, 109, 0.30);
+    //box-shadow:       0 8px 40px rgba(255, 42, 109, 0.30),
+    //                  0 0  0 1px rgba(5, 217, 232, 0.12) inset;
 }
 
 /* ── Main box ───────────────────────────────────── */
@@ -48,7 +51,8 @@ mainbox {
 /* ── Input bar ──────────────────────────────────── */
 inputbar {
     background-color: @bg1;
-    border:           1px solid @border-pink;
+    border:           1px solid;
+    border-color:     @border-pink;
     border-radius:    10px;
     padding:          10px 14px;
     margin:           0 0 10px 0;
@@ -97,7 +101,7 @@ element {
     orientation:      horizontal;
     children:         [ element-icon, element-text ];
     cursor:           pointer;
-    transition:       background-color 0.12s ease;
+    //transition:       background-color 0.12s ease;
 }
 
 element-icon {
@@ -109,7 +113,8 @@ element-icon {
 element-text {
     background-color: transparent;
     text-color:       @text;
-    highlight:        bold @cyan;
+    highlight:        bold;
+    highlight-color:  @cyan;
     cursor:           inherit;
     vertical-align:   0.5;
 }
@@ -121,25 +126,29 @@ element.normal.normal {
 }
 
 /* Hover */
-element.normal.normal:hover,
-element.alternate.normal:hover {
+//element.normal.normal:hover,
+element.alternate.normal.hover {
     background-color: @bg-hover;
     text-color:       @pink-soft;
-    border:           1px solid rgba(255, 113, 206, 0.35);
+    border:           1px solid;
+    border-color:     rgba(255, 113, 206, 0.35);
 }
 
 /* Active (selected) */
 element.selected.normal {
     background-color: @bg-select;
     text-color:       @cyan;
-    border:           1px solid @border-cyan;
-    box-shadow:       0 0 12px rgba(5, 217, 232, 0.25);
+    border:           1px solid;
+    border-color: @border-cyan;
+    box-shadow:       0 0 12px;
+    box-shadow-color: rgba(5, 217, 232, 0.25);
 }
 
 element.selected.active {
     background-color: rgba(255, 42, 109, 0.18);
     text-color:       @pink;
-    border:           1px solid @border-pink;
+    border:           1px solid;
+    border-color: @border-pink;
 }
 
 /* Urgent */
@@ -162,7 +171,8 @@ element.alternate.normal {
 /* ── Message / Error ────────────────────────────── */
 message {
     background-color: rgba(255, 42, 109, 0.10);
-    border:           1px solid @border-pink;
+    border:           1px solid;
+    border-color: @border-pink;
     border-radius:    8px;
     padding:          6px 12px;
     margin:           0 0 8px 0;

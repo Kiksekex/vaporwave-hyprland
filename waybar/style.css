@@ -11,10 +11,10 @@
      --text       #e0d0ff    lavender white
 ═══════════════════════════════════════════════════════════════════ */
 
-@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap");
+/*@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap");*/
 
 * {
-    font-family: "JetBrainsMono Nerd Font", "Rajdhani", monospace;
+    font-family: "JetBrainsMono Nerd Font",  monospace;
     font-size:   13px;
     border:      none;
     border-radius: 0;
@@ -121,7 +121,7 @@ tooltip label { color: #e0d0ff; }
     font-size:     12px;
     margin-left:   6px;
 }
-#window:empty { background: transparent; }
+#window.empty { background: transparent; }
 
 /* ── Clock ────────────────────────────────────────────────────────── */
 #clock {
